@@ -1,14 +1,14 @@
 # Progress
 
-Commit after every class. Tag every Friday: `git tag week-N && git push origin week-N`.
+Commit after every class. Tag every Friday: `git tag week-N && git push origin week-N`
 
 ## Week 1 (tag week-1 by Fri 23 Oct)
-- [ ] Repo created from the Examate template and registered on the form
-- [ ] README top section filled from my project card
-- [ ] /health runs locally
-- [ ] docs/QUESTIONS.md: 10 real questions
-- [ ] 50+ pages collected, DATASET.md filled, sample in data/sample/
-- [ ] Tag week-1 pushed
+- [x] Repo created from the Examate template and registered on the form
+- [x] README top section filled from my project card
+- [x] /health runs locally
+- [x] docs/QUESTIONS.md: 10 real questions
+- [x] 50+ pages collected, DATASET.md filled, sample in data/sample/
+- [x] Tag week-1 pushed
 
 ## Week 2 (tag week-2 by Fri 30 Oct)
 - [ ] POST /chat calls an LLM and returns structured JSON
@@ -28,4 +28,6 @@ Commit after every class. Tag every Friday: `git tag week-N && git push origin w
 ## Daily log
 | Date | What I did today | Commit |
 |---|---|---|
-| | | |
+| 2026-10-24 | Cloned Examate template, filled README from project card, downloaded Kubernetes repo index as dataset sample | 8d7008b |
+| 2026-10-25 | Filled docs/QUESTIONS.md (10 real Kubernetes questions), filled DATASET.md, added 3 Go sample files to data/sample/, tagged week-1 | — |
+
