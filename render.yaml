@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: podmentor
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: PRIMARY_MODEL
+        value: gemini-1.5-flash
+      - key: FALLBACK_MODEL
+        value: gemini-1.5-flash-8b
+      - key: GEMINI_API_KEY
+        sync: false

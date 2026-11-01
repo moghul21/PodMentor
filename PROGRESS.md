@@ -11,12 +11,12 @@ Commit after every class. Tag every Friday: `git tag week-N && git push origin w
 - [x] Tag week-1 pushed
 
 ## Week 2 (tag week-2 by Fri 30 Oct)
-- [ ] POST /chat calls an LLM and returns structured JSON
-- [ ] Streaming, timeouts, retry and a fallback model
-- [ ] Cost log + GET /usage
-- [ ] Docker Compose (API + Postgres/pgvector) runs
-- [ ] CI green, live link in README
-- [ ] Tag week-2 pushed
+- [x] POST /chat calls an LLM and returns structured JSON
+- [x] Streaming, timeouts, retry and a fallback model
+- [x] Cost log + GET /usage
+- [x] Docker Compose (API + Postgres/pgvector) runs
+- [x] CI green, live link in README
+- [x] Tag week-2 pushed
 
 ## Week 3 (tag week-3 by Fri 6 Nov)
 - [ ] Parser keeps page numbers and headings
@@ -30,4 +30,4 @@ Commit after every class. Tag every Friday: `git tag week-N && git push origin w
 |---|---|---|
 | 2026-10-24 | Cloned Examate template, filled README from project card, downloaded Kubernetes repo index as dataset sample | 8d7008b |
 | 2026-10-25 | Filled docs/QUESTIONS.md (10 real Kubernetes questions), filled DATASET.md, added 3 Go sample files to data/sample/, tagged week-1 | — |
-
+| 2026-10-30 | Implemented POST /chat with Gemini & fallback model, SSE streaming, timeouts and retries, GET /usage token & cost tracker, Docker Compose with pgvector, Render deployment config, DESIGN.md, tagged week-2 | d8f51ba |

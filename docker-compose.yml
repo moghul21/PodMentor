@@ -1,0 +1,45 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: podmentor-api
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - PORT=8000
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - PRIMARY_MODEL=${PRIMARY_MODEL:-gemini-1.5-flash}
+      - FALLBACK_MODEL=${FALLBACK_MODEL:-gemini-1.5-flash-8b}
+      - DATABASE_URL=postgresql://podmentor:podmentor_secret@db:5432/podmentor
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "python -c 'import urllib.request; urllib.request.urlopen(\"http://localhost:8000/health\")'"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: podmentor-db
+    environment:
+      - POSTGRES_USER=podmentor
+      - POSTGRES_PASSWORD=podmentor_secret
+      - POSTGRES_DB=podmentor
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U podmentor -d podmentor"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
