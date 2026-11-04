@@ -339,7 +339,7 @@ sequenceDiagram
 
     Client->>API: POST /chat {message, stream: false}
     API->>Gateway: generate_chat(message)
-    
+
     Gateway->>Primary: Request 1 (timeout = 15s)
     alt Primary succeeds
         Primary-->>Gateway: 200 OK + usageMetadata

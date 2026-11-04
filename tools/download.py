@@ -35,6 +35,7 @@ def name_for(url):
     name = os.path.basename(urlparse(url).path) or "index.html"
     return name.replace(" ", "_")
 
+
 def main(list_file):
     os.makedirs(RAW, exist_ok=True)
     new_manifest = not os.path.exists(MANIFEST)
@@ -73,13 +74,7 @@ def main(list_file):
 
             digest = hashlib.sha256(r.content).hexdigest()[:16]
 
-            log.writerow([
-                path,
-                url,
-                date.today().isoformat(),
-                len(r.content),
-                digest
-            ])
+            log.writerow([path, url, date.today().isoformat(), len(r.content), digest])
 
             print("saved", path, len(r.content), "bytes")
             time.sleep(DELAY)

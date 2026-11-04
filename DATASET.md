@@ -14,4 +14,3 @@ Full data lives in `data/raw/` (not committed — excluded via `.gitignore`). A 
 - The Kubernetes repository is licensed under the **Apache License 2.0**, which allows redistribution of source files with attribution.
 - The sample files in `data/sample/` are representative Go source files from the components most relevant to PodMentor's question set (scheduler, kubelet, node lifecycle controller).
 - The `data/raw/kubernetes` file downloaded on 2026-10-24 is the GitHub repository index page (HTML) — it was used to verify access and count. Actual Go source files are obtained from the public repository.
-
